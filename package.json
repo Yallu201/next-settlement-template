@@ -7,7 +7,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cz": "cz"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -23,6 +24,8 @@
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "typescript": "^5.3.3"
   },
   "eslintConfig": {
@@ -43,5 +46,17 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.1.0"
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "disableScopeLowerCase": true,
+      "disableSubjectLowerCase": true
+    }
+  },
+  "dependenciesMeta": {
+    "cz-conventional-changelog": {
+      "unplugged": true
+    }
+  },
+  "packageManager": "yarn@4.1.1"
 }
