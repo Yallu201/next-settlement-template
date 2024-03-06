@@ -11,6 +11,7 @@ import Deposits from './Deposits';
 import Orders from './Orders';
 import Drawer from '@/components/layout/Drawer';
 import AppBar from '@/components/layout/AppBar';
+import useDrawer from '@/stores/drawer';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -20,17 +21,14 @@ interface DashboardProps {
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ children }) => {
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+  const { open, toggle } = useDrawer();
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar open={open} toggleDrawer={toggleDrawer} />
-        <Drawer open={open} toggleDrawer={toggleDrawer} />
+        <AppBar open={open} toggle={toggle} />
+        <Drawer open={open} toggle={toggle} />
         <Box
           component="main"
           sx={{

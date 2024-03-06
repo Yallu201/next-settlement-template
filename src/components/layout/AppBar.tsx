@@ -29,9 +29,9 @@ const StyledAppBar = styled(MuiAppBar, {
 }));
 
 interface AppBarProps extends StyledAppBarProps {
-  toggleDrawer: () => void;
+  toggle: () => void;
 }
-const AppBar: FC<AppBarProps> = ({ open, toggleDrawer }) => {
+const AppBar: FC<AppBarProps> = ({ open, toggle }) => {
   return (
     <StyledAppBar position="absolute" open={open}>
       <Toolbar
@@ -43,7 +43,7 @@ const AppBar: FC<AppBarProps> = ({ open, toggleDrawer }) => {
           edge="start"
           color="inherit"
           aria-label="open drawer"
-          onClick={toggleDrawer}
+          onClick={toggle}
           sx={{
             marginRight: '36px',
             ...(open && { display: 'none' }),

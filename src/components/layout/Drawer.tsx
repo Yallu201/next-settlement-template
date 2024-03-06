@@ -31,9 +31,9 @@ const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== '
 
 interface DrawerProps {
   open: boolean;
-  toggleDrawer: () => void;
+  toggle: () => void;
 }
-const Drawer: FC<DrawerProps> = ({ open, toggleDrawer }) => {
+const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
   return (
     <StyledDrawer variant="permanent" open={open}>
       <Toolbar
@@ -44,7 +44,7 @@ const Drawer: FC<DrawerProps> = ({ open, toggleDrawer }) => {
           px: [1],
         }}
       >
-        <IconButton onClick={toggleDrawer}>
+        <IconButton onClick={toggle}>
           <ChevronLeftIcon />
         </IconButton>
       </Toolbar>
