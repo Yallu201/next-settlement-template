@@ -1,10 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
+import Dashboard from '@/components/layout/DashBoard';
 import Router from '@/router';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Router />
+      <Dashboard>
+        <Router />
+      </Dashboard>
     </BrowserRouter>
   );
 };
