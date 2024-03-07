@@ -1,5 +1,5 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
-import Home from '@/pages';
+import Home from '@/pages/home';
 
 const Router = () => {
   const commonRoutes: RouteObject[] = [
