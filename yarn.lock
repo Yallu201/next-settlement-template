@@ -1453,6 +1453,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ag-grid-community@npm:^29.3.5":
+  version: 29.3.5
+  resolution: "ag-grid-community@npm:29.3.5"
+  checksum: 10c0/12bb28474afcbcd5117aa7100343d9809e068a08a338676409a8b1ae1572a331166fd89ec519f203a110a46b2d3ac8ca3244bfeddb24af285d6fd1bb3c31febc
+  languageName: node
+  linkType: hard
+
+"ag-grid-enterprise@npm:^29.3.5":
+  version: 29.3.5
+  resolution: "ag-grid-enterprise@npm:29.3.5"
+  checksum: 10c0/d5fff628ed2d91adcc73548e4acbc683890f07453ef4a23ce8ac77599f9c945612e5dfe89b4944b2fad43d8e33f14cbd26d77492541a071c809930dfb8c7ee23
+  languageName: node
+  linkType: hard
+
+"ag-grid-react@npm:^29.3.5":
+  version: 29.3.5
+  resolution: "ag-grid-react@npm:29.3.5"
+  dependencies:
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    ag-grid-community: ~29.3.5
+    react: ^16.3.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/eb1d80bd6c0ddd853521dc50d65fc1deb3d066433f30ca1c12da5b343f41fdbc0b5abc1e6c64ed436c1d0acb9e28eeae03f33b9bbd8b0812f467d245a1cd33cf
+  languageName: node
+  linkType: hard
+
 "agent-base@npm:^7.0.2, agent-base@npm:^7.1.0":
   version: 7.1.0
   resolution: "agent-base@npm:7.1.0"
@@ -4863,6 +4890,9 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.1.1"
     "@typescript-eslint/parser": "npm:^7.1.1"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
+    ag-grid-community: "npm:^29.3.5"
+    ag-grid-enterprise: "npm:^29.3.5"
+    ag-grid-react: "npm:^29.3.5"
     commitizen: "npm:^4.3.0"
     eslint: "npm:^8.57.0"
     eslint-config-airbnb: "npm:^19.0.4"
