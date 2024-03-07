@@ -307,28 +307,6 @@ export const API_ENDPOINTS = {
       UPDATE: 'custom',
     },
   },
-  MEMBERSHIP: {
-    ZH_MEMBERS: {
-      SUBSCRIPTIONS: {
-        LIST: 'gmbs',
-        HISTORY: (params) => `gmbs/${params.id}/history`,
-        CANCELLATION: (params) => `gmbs/${params.id}/request_refund`,
-      },
-      CANCELLATIONS: {
-        LIST: 'gmbs/refunds',
-        CANCEL: (params) => `gmbs/${params.gmbs_refund_id}/cancel_refund`,
-        REFUND: (params) => `gmbs/${params.gmbs_refund_id}/complete_refund`,
-        MEMO: (params) => `gmbs/${params.history_id}/update_memo`,
-      },
-      PAYMENTS: {
-        LIST: 'membership/payments',
-      },
-      PROMOTIONS: {
-        LIST: 'promotions',
-        CODE: 'promotions',
-      },
-    },
-  },
   USERS: {
     BUSINESS_LICENSES: {
       META: '/admin/api/v1/users/business_licenses/meta',
@@ -344,6 +322,4 @@ export const API_ENDPOINTS = {
   },
 };
 
-export default {
-  API_ENDPOINTS,
-};
+export default API_ENDPOINTS;

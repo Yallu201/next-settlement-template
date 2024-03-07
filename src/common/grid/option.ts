@@ -1,8 +1,8 @@
+import { ColDef, GridOptions } from 'ag-grid-community';
 import { multiTextFilterParams } from './presenters';
 import { AG_GRID_LOCALE_KO } from './locale';
-import ManageButton from '@/components/manage-button';
 
-export const defaultColDef = {
+export const defaultColDef: ColDef = {
   // columnGroupShow: 'closed',
   resizable: true,
   editable: false,
@@ -12,19 +12,16 @@ export const defaultColDef = {
   enableValue: true,
   menuTabs: ['filterMenuTab', 'generalMenuTab', 'columnsMenuTab'],
   floatingFilter: true,
-  rowDragManaged: true,
-  frameworkComponents: {
-    actionRenderer: ManageButton,
-  },
   filter: 'agMultiColumnFilter',
   filterParams: multiTextFilterParams,
   keyCreator: (params) => params.value,
   valueFormatter: (params) => params.value,
 };
 
-export const defaultGridOptions = {
+export const defaultGridOptions: GridOptions = {
   localeText: AG_GRID_LOCALE_KO,
   defaultColDef,
+  rowDragManaged: true,
   // rowSelection: 'multiple',
   editType: 'fullRow',
   groupHeaderHeight: 32,
@@ -51,10 +48,7 @@ export const defaultGridOptions = {
     toolPanels: ['columns', 'filters'],
     // defaultToolPanel: 'columns',
   },
-  tooltipShowDelay: '500',
-  frameworkComponents: {
-    actionRenderer: ManageButton,
-  },
+  // tooltipShowDelay: '500',
   onRowEditingStarted: (params) => {
     params.api.refreshCells({
       rowNodes: [params.node],
@@ -67,62 +61,4 @@ export const defaultGridOptions = {
       force: true,
     });
   },
-};
-
-export const dateFilterParamsYMD = {
-  comparator: (filterLocalDateAtMidnight, cellValue) => {
-    const dateAsString = cellValue;
-    if (dateAsString == null) return -1;
-    const dateParts = dateAsString.split('-');
-
-    const cellDate = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[2]));
-    if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
-      return 0;
-    }
-    if (cellDate < filterLocalDateAtMidnight) {
-      return -1;
-    }
-    if (cellDate > filterLocalDateAtMidnight) {
-      return 1;
-    }
-    return 0;
-  },
-  minValidYear: 2000,
-  maxValidYear: 2221,
-  inRangeFloatingFilterDateFormat: 'Do MMM YYYY',
-};
-
-export const dateFilterParamsYMDHms = {
-  comparator: (filterLocalDateAtMidnight, cellValue) => {
-    const dateAsString = cellValue;
-    if (dateAsString == null) return -1;
-    const dateParts = dateAsString.split('-');
-
-    const cellDate = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[2].split(' ')[0]));
-    if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
-      return 0;
-    }
-    if (cellDate < filterLocalDateAtMidnight) {
-      return -1;
-    }
-    if (cellDate > filterLocalDateAtMidnight) {
-      return 1;
-    }
-    return 0;
-  },
-  minValidYear: 2000,
-  maxValidYear: 2221,
-  inRangeFloatingFilterDateFormat: 'Do MMM YYYY',
-};
-
-export const dateColumnFilterParamsYMDHms = {
-  filterOptions: ['inRange'],
-  comparator: dateFilterParamsYMDHms.comparator,
-  inRangeInclusive: true,
-};
-
-export const dateColumnFilterParamsYMD = {
-  filterOptions: ['inRange'],
-  comparator: dateFilterParamsYMD.comparator,
-  inRangeInclusive: true,
 };

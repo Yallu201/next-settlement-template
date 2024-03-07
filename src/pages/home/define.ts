@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { format, subDays } from 'date-fns';
+import { ColDef, ColumnApi, FirstDataRenderedEvent, GridApi, GridOptions, GridReadyEvent } from 'ag-grid-community';
 import { defaultGridOptions } from '@/common/grid';
 import { autoSizeColumns } from '@/common/grid/presenters';
 
@@ -9,61 +10,43 @@ export const getInitialFilter = () => ({
 });
 
 const useGrid = () => {
-  const [gridApi, setGridApi] = useState([]);
+  const [gridApi, setGridApi] = useState<GridApi>();
 
-  const [gridColumnApi, setGridColumnApi] = useState(null);
+  const [gridColumnApi, setGridColumnApi] = useState<ColumnApi>();
 
-  const autoGroupColumnDef = {
+  const autoGroupColumnDef: ColDef = {
     pinned: 'left',
     minWidth: 80,
     width: 175,
   };
+
   const columnDefs = [
     {
-      headerName: '그룹ID',
-      field: 'groupId',
-    },
-    {
-      headerName: '도소매ID',
-      field: 'storeId',
-    },
-    {
-      headerName: '계정ID',
-      field: 'userId',
-    },
-    {
-      headerName: '사업자번호',
-      field: 'regNum',
-    },
-    {
-      headerName: '사업자명',
-      field: 'storeName',
-    },
-    {
-      headerName: '대표자명',
-      field: 'ceoName',
-    },
-    {
-      headerName: '사업자정보 변경일시',
-      field: 'storeUpdatedAt',
-      cellDataType: 'dateString',
-    },
-    {
-      headerName: '계정상태',
-      field: 'ceoStatus',
-    },
-    {
-      headerName: '계정상태 변경일시',
-      field: 'ceoStatusUpdatedAt',
-      cellDataType: 'dateString',
-    },
-    {
-      headerName: '그룹관리',
+      headerName: 'ID',
       field: 'id',
-      cellStyle: { minWidth: '160px' },
+    },
+    {
+      headerName: '날짜',
+      field: 'date',
+    },
+    {
+      headerName: '이름',
+      field: 'name',
+    },
+    {
+      headerName: '주소',
+      field: 'shipTo',
+    },
+    {
+      headerName: '결제수단',
+      field: 'paymentMethod',
+    },
+    {
+      headerName: '금액',
+      field: 'amount',
     },
   ];
-  const gridOptions = {
+  const gridOptions: GridOptions = {
     ...defaultGridOptions,
     statusBar: {
       statusPanels: [
@@ -80,13 +63,13 @@ const useGrid = () => {
     columnDefs,
   };
 
-  const onGridReady = useCallback((params) => {
-    setGridApi(params.api);
-    setGridColumnApi(params.columnApi);
+  const onGridReady = useCallback((e: GridReadyEvent) => {
+    setGridApi(e.api);
+    setGridColumnApi(e.columnApi);
   }, []);
 
-  const onFirstDataRendered = useCallback((params) => {
-    autoSizeColumns(params);
+  const onFirstDataRendered = useCallback((e: FirstDataRenderedEvent) => {
+    autoSizeColumns(e);
     // params.api.sizeColumnsToFit();
   }, []);
 

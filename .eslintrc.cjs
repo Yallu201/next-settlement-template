@@ -28,6 +28,8 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'no-undef': 'off',
+    'no-unused-vars': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }], // .tsx 확장자에서만 jsx 문법을 사용하도록 제한
   },
 };

@@ -281,3 +281,5 @@ export const AG_GRID_LOCALE_KO = {
   ariaLabelSubMenu: '하위 메뉴',
   ariaLabelAggregationFunction: '집계 함수',
 };
+
+export default AG_GRID_LOCALE_KO;
