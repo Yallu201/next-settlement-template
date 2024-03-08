@@ -1,9 +1,10 @@
-import { Divider, IconButton, List, Toolbar, styled } from '@mui/material';
+import { Box, Divider, IconButton, List, Toolbar, styled } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FC } from 'react';
 import { drawerWidth } from '@/components/layout/constants';
 import { mainListItems, secondaryListItems } from './listItems';
+import dealiousLogo from '@/assets/logo.png';
 
 const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   '& .MuiDrawer-paper': {
@@ -40,10 +41,13 @@ const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-between',
           px: [1],
         }}
       >
+        <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+          <img src={dealiousLogo} alt="" style={{ height: '40px' }} />
+        </Box>
         <IconButton onClick={toggle}>
           <ChevronLeftIcon />
         </IconButton>

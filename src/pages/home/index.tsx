@@ -3,7 +3,6 @@ import { AgGridReact } from 'ag-grid-react';
 import clsx from 'clsx';
 import { useRef } from 'react';
 import Chart from '@/components/layout/Chart';
-import Deposits from '@/components/layout/Deposits';
 import useGrid from '@/pages/home/define';
 import AgGridStyle from '@/components/grid.style';
 import useOrderStore from '@/stores/order';
@@ -17,7 +16,7 @@ const Home = () => {
   return (
     <Grid container spacing={3}>
       {/* Chart */}
-      <Grid item xs={12} md={8} lg={9}>
+      <Grid item xs={12}>
         <Paper
           sx={{
             p: 2,
@@ -27,19 +26,6 @@ const Home = () => {
           }}
         >
           <Chart />
-        </Paper>
-      </Grid>
-      {/* Recent Deposits */}
-      <Grid item xs={12} md={4} lg={3}>
-        <Paper
-          sx={{
-            p: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            height: 240,
-          }}
-        >
-          <Deposits />
         </Paper>
       </Grid>
       {/* Recent Orders */}
