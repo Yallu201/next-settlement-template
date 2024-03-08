@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { drawerWidth } from '@/components/layout/constants';
 import { mainListItems, secondaryListItems } from './listItems';
 import dealiousLogo from '@/assets/logo.png';
+import EnvBadge from '@/components/layout/EnvBadge';
 
 const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   '& .MuiDrawer-paper': {
@@ -45,8 +46,9 @@ const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
           px: [1],
         }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+        <Box sx={{ paddingLeft: '76px', display: 'flex', alignItems: 'center', flexGrow: 1, position: 'relative' }}>
           <img src={dealiousLogo} alt="" style={{ height: '40px' }} />
+          <EnvBadge />
         </Box>
         <IconButton onClick={toggle}>
           <ChevronLeftIcon />
