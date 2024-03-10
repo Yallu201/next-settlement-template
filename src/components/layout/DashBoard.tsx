@@ -35,7 +35,7 @@ const Dashboard: React.FC<DashboardProps> = ({ children }) => {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
             {children}
           </Container>
         </Box>
