@@ -3,7 +3,7 @@ import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FC } from 'react';
 import { drawerWidth } from '@/components/layout/constants';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems } from './listItems';
 import dealiousLogo from '@/assets/logo.png';
 import EnvBadge from '@/components/layout/EnvBadge';
 
@@ -55,11 +55,7 @@ const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
         </IconButton>
       </Toolbar>
       <Divider />
-      <List component="nav">
-        {mainListItems}
-        <Divider sx={{ my: 1 }} />
-        {secondaryListItems}
-      </List>
+      <List component="nav">{mainListItems}</List>
     </StyledDrawer>
   );
 };

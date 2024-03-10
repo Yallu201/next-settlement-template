@@ -31,6 +31,7 @@ const StyledAppBar = styled(MuiAppBar, {
 interface AppBarProps extends StyledAppBarProps {
   toggle: () => void;
 }
+
 const AppBar: FC<AppBarProps> = ({ open, toggle }) => {
   return (
     <StyledAppBar position="absolute" open={open}>

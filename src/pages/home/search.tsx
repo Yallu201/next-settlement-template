@@ -1,47 +1,37 @@
-import { Grid, Paper } from '@mui/material';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import { Button, TextField } from '@mui/material';
 import { AgGridReact } from 'ag-grid-react';
-import clsx from 'clsx';
-import { useRef } from 'react';
-import Chart from '@/components/layout/Chart';
-import useGrid from '@/pages/home/define';
-import AgGridStyle from '@/components/grid.style';
-import useOrderStore from '@/stores/order';
+import { FC } from 'react';
+import { useForm } from 'react-hook-form';
 
-const Home = () => {
-  const { gridOptions, onGridReady, onFirstDataRendered } = useGrid();
-  const globalClasses = AgGridStyle();
-  const { list } = useOrderStore();
-  const gridRef = useRef<AgGridReact>(null);
+interface SearchFilterProps {
+  gridRef: AgGridReact;
+}
 
+const SearchFilter: FC<SearchFilterProps> = ({ gridRef }) => {
+  const { register, handleSubmit } = useForm();
   return (
-    <Grid container spacing={3}>
-      {/* Chart */}
-      <Grid item xs={12} md={8} lg={9}>
-        <Paper
-          sx={{
-            p: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            height: 240,
-          }}
-        >
-          <Chart />
-        </Paper>
-      </Grid>
-      {/* Recent Orders */}
-      <Grid item xs={12}>
-        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 500 }}>
-          <AgGridReact
-            rowData={list}
-            ref={gridRef}
-            onGridReady={onGridReady}
-            className={clsx(globalClasses.agGridContainer, 'ag-theme-alpine')}
-            gridOptions={gridOptions}
-            onFirstDataRendered={onFirstDataRendered}
-          />
-        </Paper>
-      </Grid>
-    </Grid>
+    <Box
+      component="form"
+      noValidate
+      sx={{
+        display: 'flex',
+        gridTemplateColumns: { sm: '1fr 1fr' },
+        gap: 2,
+      }}
+      onSubmit={handleSubmit((formValues) => {
+        gridRef.api.setQuickFilter(formValues['quick-search']);
+      })}
+    >
+      <FormControl variant="standard" sx={{ flexGrow: 1 }}>
+        <TextField placeholder="빠른검색" {...register('quick-search')} />
+      </FormControl>
+      <Button type="submit" size="small" variant="contained">
+        검색
+      </Button>
+    </Box>
   );
 };
-export default Home;
+
+export default SearchFilter;

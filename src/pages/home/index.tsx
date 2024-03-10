@@ -2,10 +2,10 @@ import { Grid, Paper } from '@mui/material';
 import { AgGridReact } from 'ag-grid-react';
 import clsx from 'clsx';
 import { useRef } from 'react';
-import Chart from '@/components/layout/Chart';
 import useGrid from '@/pages/home/define';
 import AgGridStyle from '@/components/grid.style';
 import useOrderStore from '@/stores/order';
+import SearchFilter from '@/pages/home/search';
 
 const Home = () => {
   const { gridOptions, onGridReady, onFirstDataRendered } = useGrid();
@@ -14,18 +14,17 @@ const Home = () => {
   const gridRef = useRef<AgGridReact>(null);
 
   return (
-    <Grid container spacing={3}>
-      {/* Chart */}
+    <Grid container spacing={3} sx={{ maxWidth: '100%' }}>
+      {/* Search filter */}
       <Grid item xs={12}>
         <Paper
           sx={{
             p: 2,
             display: 'flex',
             flexDirection: 'column',
-            height: 240,
           }}
         >
-          <Chart />
+          <SearchFilter gridRef={gridRef.current as AgGridReact} />
         </Paper>
       </Grid>
       {/* Recent Orders */}
