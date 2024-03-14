@@ -1,10 +1,9 @@
 import { IconButton, Toolbar, Typography, styled } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { FC } from 'react';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
-import { drawerWidth } from '@/components/layout/constants.ts';
+import { drawerWidth } from '@/components/common/layout/constants';
+import AlertModal from '@/components/common/modals/SampleModal';
 
 interface StyledAppBarProps extends MuiAppBarProps {
   open: boolean;
@@ -55,11 +54,7 @@ const AppBar: FC<AppBarProps> = ({ open, toggle }) => {
         <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
           홈
         </Typography>
-        <IconButton color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
+        <AlertModal />
       </Toolbar>
     </StyledAppBar>
   );

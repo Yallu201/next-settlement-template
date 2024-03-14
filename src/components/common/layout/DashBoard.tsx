@@ -4,8 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Drawer from '@/components/layout/Drawer';
-import AppBar from '@/components/layout/AppBar';
+import Drawer from '@/components/common/layout/Drawer';
+import AppBar from '@/components/common/layout/AppBar';
 import useDrawer from '@/stores/drawer';
 
 // TODO remove, this demo shouldn't need to reset the theme.

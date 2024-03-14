@@ -2,10 +2,10 @@ import { Box, Divider, IconButton, List, Toolbar, styled } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FC } from 'react';
-import { drawerWidth } from '@/components/layout/constants';
+import { drawerWidth } from '@/components/common/layout/constants';
 import { mainListItems } from './listItems';
 import dealiousLogo from '@/assets/logo.png';
-import EnvBadge from '@/components/layout/EnvBadge';
+import EnvBadge from '@/components/common/EnvBadge';
 
 const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   '& .MuiDrawer-paper': {
