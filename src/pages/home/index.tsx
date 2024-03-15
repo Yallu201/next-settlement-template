@@ -3,7 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import clsx from 'clsx';
 import { useRef } from 'react';
 import useGrid from '@/pages/home/define';
-import AgGridStyle from '@/components/ag-grid/grid-style';
+import AgGridStyle from '@/styles/emotion/ag-grid';
 import useOrderStore from '@/stores/order';
 import SearchFilter from '@/pages/home/search';
 
