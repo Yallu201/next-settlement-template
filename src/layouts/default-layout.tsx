@@ -4,8 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Drawer from '@/layouts/Drawer';
-import AppBar from '@/layouts/AppBar';
+import Drawer from '@/components/common/Drawer';
+import AppBar from '@/components/common/AppBar';
 import useDrawer from '@/stores/drawer';
 
 const defaultTheme = createTheme();

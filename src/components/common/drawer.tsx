@@ -3,9 +3,9 @@ import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FC } from 'react';
 import { drawerWidth } from '@/constants/layout';
-import { mainListItems } from './listItems';
+import NavList from './nav-list';
 import dealiousLogo from '@/assets/logo.png';
-import EnvBadge from '@/components/common/EnvBadge';
+import EnvBadge from '@/components/common/env-badge';
 
 const StyledDrawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(({ theme, open }) => ({
   '& .MuiDrawer-paper': {
@@ -47,7 +47,7 @@ const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
         }}
       >
         <Box sx={{ paddingLeft: '76px', display: 'flex', alignItems: 'center', flexGrow: 1, position: 'relative' }}>
-          <img src={dealiousLogo} alt="" style={{ height: '40px' }} />
+          <img src={dealiousLogo} alt="" style={{ height: '40px', marginBottom: '6px' }} />
           <EnvBadge />
         </Box>
         <IconButton onClick={toggle}>
@@ -55,7 +55,9 @@ const Drawer: FC<DrawerProps> = ({ open, toggle }) => {
         </IconButton>
       </Toolbar>
       <Divider />
-      <List component="nav">{mainListItems}</List>
+      <List component="nav">
+        <NavList />
+      </List>
     </StyledDrawer>
   );
 };

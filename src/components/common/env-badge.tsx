@@ -8,7 +8,7 @@ const EnvBadge = () => {
     <Chip
       style={{
         position: 'absolute',
-        bottom: '-10px',
+        bottom: '-4px',
         left: '106px',
         pointerEvents: 'none',
         height: '16px',
