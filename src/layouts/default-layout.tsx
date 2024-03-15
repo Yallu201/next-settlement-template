@@ -4,8 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Drawer from '@/components/common/Drawer';
-import AppBar from '@/components/common/AppBar';
+import Snb from '@/components/common/snb';
+import AppBar from '@/components/common/app-bar';
 import useDrawer from '@/stores/drawer';
 
 const defaultTheme = createTheme();
@@ -22,7 +22,7 @@ const Dashboard: React.FC<DashboardProps> = ({ children }) => {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar open={open} toggle={toggle} />
-        <Drawer open={open} toggle={toggle} />
+        <Snb open={open} toggle={toggle} />
         <Box
           component="main"
           sx={{
