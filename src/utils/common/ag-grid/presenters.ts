@@ -26,6 +26,7 @@ export const multiTextFilterParams = {
     {
       filter: 'agSetColumnFilter',
       filterParams: {
+        convertValuesToStrings: true,
         applyMiniFilterWhileTyping: true, // 필터검색어 즉시반영
         caseSensitive: false, // 대소문자 구분여부 (true: 같은 검색어로 인식, false: 대소문자 구분해서 인식)
         textFormatter: (value: string) => {
