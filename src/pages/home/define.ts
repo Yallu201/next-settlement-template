@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 import { format, subDays } from 'date-fns';
 import { ColDef, ColumnApi, FirstDataRenderedEvent, GridApi, GridOptions, GridReadyEvent } from 'ag-grid-community';
-import { defaultGridOptions } from '@/common/grid';
-import { autoSizeColumns } from '@/common/grid/presenters';
+import { defaultGridOptions } from '@/utils/ag-grid/option';
+import { autoSizeColumns } from '@/utils/ag-grid/presenters';
 
 export const getInitialFilter = () => ({
   startDate: format(subDays(new Date(), 0), 'yyyy-MM-dd'),
@@ -20,7 +20,7 @@ const useGrid = () => {
     width: 175,
   };
 
-  const columnDefs = [
+  const columnDefs: ColDef[] = [
     {
       headerName: 'ID',
       field: 'id',

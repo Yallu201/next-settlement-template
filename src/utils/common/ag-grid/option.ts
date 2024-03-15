@@ -1,6 +1,6 @@
 import { ColDef, GridOptions } from 'ag-grid-community';
-import { multiTextFilterParams } from './presenters';
-import { AG_GRID_LOCALE_KO } from './locale';
+import { AG_GRID_LOCALE_KO } from '@/constants/common/ag-grid/locale';
+import { multiTextFilterParams } from '@/utils/common/ag-grid/presenters';
 
 export const defaultColDef: ColDef = {
   // columnGroupShow: 'closed',
