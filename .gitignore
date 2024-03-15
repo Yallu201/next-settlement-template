@@ -59,3 +59,6 @@ dist-ssr
 
 # vite cache
 .vite
+
+# eslint cache
+.eslintcache
