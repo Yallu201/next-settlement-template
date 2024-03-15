@@ -4,11 +4,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import Drawer from '@/components/common/layout/Drawer';
-import AppBar from '@/components/common/layout/AppBar';
+import Drawer from '@/layouts/Drawer';
+import AppBar from '@/layouts/AppBar';
 import useDrawer from '@/stores/drawer';
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 interface DashboardProps {

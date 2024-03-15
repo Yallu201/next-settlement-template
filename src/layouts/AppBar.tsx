@@ -2,7 +2,7 @@ import { IconButton, Toolbar, Typography, styled } from '@mui/material';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import { FC } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { drawerWidth } from '@/components/common/layout/constants';
+import { drawerWidth } from '@/constants/layout';
 import AlertModal from '@/components/common/modals/SampleModal';
 
 interface StyledAppBarProps extends MuiAppBarProps {

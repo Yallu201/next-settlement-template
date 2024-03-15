@@ -2,7 +2,7 @@ import { Box, Divider, IconButton, List, Toolbar, styled } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { FC } from 'react';
-import { drawerWidth } from '@/components/common/layout/constants';
+import { drawerWidth } from '@/constants/layout';
 import { mainListItems } from './listItems';
 import dealiousLogo from '@/assets/logo.png';
 import EnvBadge from '@/components/common/EnvBadge';
