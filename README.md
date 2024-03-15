@@ -1,4 +1,4 @@
-# React 어드민 프로젝트 템플릿
+# React AG Grid 템플릿
 
 - IDE에서 yarn3에서 관리하는 의존성을 알 수 있도록 알맞은 [SDK](https://yarnpkg.com/getting-started/editor-sdks#vscode)를 설치해주세요.
 - 프로젝트를 실행하기 위해 먼저 `yarn install`을 실행해주세요.

@@ -1,7 +1,7 @@
 {
-  "name": "react-settlement-template",
-  "description": "정산 조회 서비스 템플릿",
-  "version": "0.1.0",
+  "name": "react-ag-grid-template",
+  "description": "React AG Grid 템플릿",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
