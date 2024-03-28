@@ -1,15 +1,13 @@
 import { Grid, Paper } from '@mui/material';
 import { AgGridReact } from 'ag-grid-react';
-import clsx from 'clsx';
 import { useRef } from 'react';
 import useGrid from '@/pages/home/define';
-import AgGridStyle from '@/styles/emotion/ag-grid';
 import useOrderStore from '@/stores/order';
 import SearchFilter from '@/pages/home/search';
+import AgGrid from '@/components/ag-grid';
 
 const Home = () => {
   const { gridOptions, onGridReady, onFirstDataRendered } = useGrid();
-  const globalClasses = AgGridStyle();
   const { list } = useOrderStore();
   const gridRef = useRef<AgGridReact>(null);
 
@@ -30,11 +28,10 @@ const Home = () => {
       {/* Recent Orders */}
       <Grid item xs={12}>
         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 500 }}>
-          <AgGridReact
+          <AgGrid
             rowData={list}
             ref={gridRef}
             onGridReady={onGridReady}
-            className={clsx(globalClasses.agGridContainer, 'ag-theme-alpine')}
             gridOptions={gridOptions}
             onFirstDataRendered={onFirstDataRendered}
           />
